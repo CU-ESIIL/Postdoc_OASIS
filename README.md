@@ -1,74 +1,113 @@
-[![DOI](https://zenodo.org/badge/733258046.svg)](https://zenodo.org/doi/10.5281/zenodo.11166823)
+# Postdoc OASIS Template
 
-# Postdoc OASIS
-This is the central hub for information pertaining to ESIIL Postdocs
+This repository is a template for ESIIL postdoctoral researchers.
 
-# [Your Name]
+The template is designed as one connected system:
 
-Welcome to the [Your Name] repository, part of the Environmental Data Science Innovation and Inclusion Lab (ESIIL). This repository serves as the central hub for our research at ESIIL, hosting your project description, proposals, bio, codebase, and more.
+- The repository is where the research happens.
+- The website is where the research is shared.
+- GitHub connects them through commits, version history, and publishing.
 
-## Your Project
+## How this repository is organized
 
-[Provide a brief overview of your project here. Explain what you aim to achieve, the importance of your project, and its expected impact.]
+The repository has two connected layers. Top-level files configure the project and its automation. The `docs/` folder contains the website content. `mkdocs.yml` tells MkDocs how to turn that content into the public site. Analysis folders hold the working scientific materials that generate the results shown on the website.
 
-## Project Proposal
+```text
+.
+├── README.md              # Repository overview and setup notes
+├── AGENTS.md              # Guidance for coding agents and future maintainers
+├── PROMPT_ACTION_LOG.md   # Record of template-level prompt-driven changes
+├── mkdocs.yml             # Website navigation, theme, plugins, and edit links
+├── docs/                  # Markdown source for the public website
+├── scripts/               # Build helpers and site health checks
+├── templates/             # Reusable meeting-note templates
+├── containers/            # Optional runtime and environment setup
+└── other working folders  # Add data, notebooks, scripts, workflows, outputs, or figures as the postdoc project grows
+```
 
-[Link to the detailed project proposal document or include the proposal directly in the repository. This should outline the goals, methodologies, anticipated challenges, and projected timelines.]
+Use these rules of thumb when deciding where to put something:
 
-## Collaborators and Co-Authors 
+- Top-level files and folders are for project configuration, automation, contribution guidance, licensing, environment setup, and repo-wide metadata.
+- `docs/` is for public website pages and assets. Markdown files here become website pages through MkDocs.
+- `mkdocs.yml` controls how the website is rendered, including navigation, theme settings, plugins, and GitHub edit links.
+- Scientific working materials belong in working folders such as data, notebooks, scripts, workflows, outputs, and figure directories.
 
-[List the names and a brief description of people you work with, possibly linking to their personal or professional web pages.]
+## Common places to edit
 
-- **Collaborator 1**: Brief description.
-- **Collaborator 2**: Brief description.
-- ...
+- `docs/index.md` is the homepage for the public site.
+- `docs/work-plan.md` tracks milestones, meetings, outputs, and handoff plans for the postdoc project.
+- `docs/how-this-postdoc-project-works.md` holds collaboration norms, project guides, data links, methods links, and process galleries.
+- `docs/esiil-resources/team-trainings.md` and `docs/esiil-resources/code-of-conduct.md` are under ESIIL and Postdoc Resources.
+- `docs/community-care.md` is nested under ESIIL and Postdoc Resources and links to ESIIL community care and team science resources.
+- `docs/instructions/` contains practical instructions for GitHub, persistent storage, project lifecycle phases, and landmarks.
+- `docs/resources/` contains reusable resource guides such as the Cloud Triangle, Cite and Reuse guidance, and existing postdoc resource pages.
+- `docs/assets/images/slots/` contains named image slots for the homepage and other shared visuals.
+- `docs/assets/images/process/` contains folder-driven process galleries that render automatically on the site.
 
-## Code Repository
+## Preview locally
 
-This section of the repository will include all the code developed for the project. You can structure it as follows:
+```bash
+pip install -r requirements.txt
+python scripts/generate_image_slots.py
+python scripts/site_health.py
+mkdocs serve
+```
 
-- **Analysis Code**: Scripts for data analysis, statistical modeling, etc.
-- **Data Processing**: Scripts for cleaning, merging, and managing datasets.
-- **Visualization**: Code for creating figures, charts, and interactive visualizations.
+## Build site
 
-## Meeting Notes and Agendas
+```bash
+python scripts/generate_image_slots.py
+python scripts/site_health.py
+mkdocs build --strict --clean
+```
 
-When you meet with your advisor, collaborators, or a team, you should take notes here. 
+## Swapping homepage images
 
-## Contributing to This Repository
+The site uses semantic image slots so postdocs do not need to edit Markdown links every time an image changes.
 
-To maintain the quality and integrity of the repository, please adhere to the following guidelines:
+1. Open the relevant folder in `docs/assets/images/slots/`.
+2. Delete the old image file.
+3. Add one new `.png`, `.jpg`, `.jpeg`, `.webp`, or `.svg` file.
+4. Run `python scripts/generate_image_slots.py`.
+5. Commit the image change and the regenerated slot references.
 
-- Make sure all commits have a clear and concise message.
-- Document any major changes or decisions in the meeting notes.
-- Review and merge changes through pull requests to ensure oversight.
+If a slot folder contains multiple images, the generator uses the first image alphabetically and the site health report will warn you to clean it up. The cleanest workflow is still one image per slot folder.
 
-## Getting Help
+## Using process galleries
 
-If you encounter any issues or have questions about how to contribute, please refer to the [ESIIL Support Page](https://esiil.org/support) or contact the repository maintainers directly.
+Process galleries are folder-driven. Add files to a gallery folder, commit them, and the site updates automatically.
 
-## Customize Your Repository
+1. Open the relevant folder in `docs/assets/images/process/`.
+2. Add images or supported deliverable files.
+3. Optionally add a `captions.txt` file with lines like `filename.png | Caption text`.
+4. Run `python scripts/generate_image_slots.py`.
+5. Commit the new files and the regenerated gallery includes.
 
-As a new working group, you'll want to make this repository your own. Here's how to get started:
+Supported image files:
 
-1. **Edit This Readme**: Replace the placeholder content with information about your specific project. Ensure that the introduction, project overview, and objectives clearly reflect your group's research focus.
+- `.png`
+- `.jpg`
+- `.jpeg`
+- `.webp`
+- `.svg`
 
-2. **Update Bio**: Add details about your expertise, role in the project, and professional background. Include links to personal or professional web pages to foster community engagement and collaboration.
+Supported linked deliverable files:
 
-3. **Organize Your Code**: Structure your codebase in a way that is logical and accessible. Use directories and clear naming conventions to make it easy for all members to find and contribute to different parts of the project.
+- `.pdf`
+- `.html`
+- `.csv`
+- `.xlsx`
+- `.docx`
+- `.pptx`
 
-4. **Document Your Data**: Include a data directory with README files explaining the datasets, sources, and any preprocessing steps. This will help new members understand and work with the project's data effectively.
+## Site Health
 
-5. **Outline Your Methods**: Create a detailed METHODS.md file where you describe the methodologies, software, and tools you will be using in your research. This transparency will support reproducibility and collaborative development.
+The site generates a non-blocking health report during the build.
 
-6. **Set Up Project Management**: Utilize the 'Issues' and 'Projects' features on GitHub to track tasks, discuss ideas, and manage your workflow. This can help in maintaining a clear view of progress and priorities.
+The report flags common issues such as missing files, placeholder links, outdated navigation, or incomplete template fields.
 
-7. **Add a License**: Choose and include an appropriate open-source license for your project, ensuring that the broader community understands how they can use and contribute to your work.
+Warnings do not prevent the site from publishing. They are intended to help postdocs and maintainers improve the site.
 
-8. **Create Contribution Guidelines**: Establish a CONTRIBUTING.md file with instructions for members on how to propose changes, submit issues, and contribute code.
+## GitHub Pages
 
-9. **Review and Merge Workflow**: Decide on a workflow for reviewing and merging changes. Will you use branch protection? Who will have merge privileges? Document this process to avoid confusion.
-
-10. **Establish Communication Channels**: Beyond GitHub, set up additional communication channels like Slack, Discord, or email lists for quick and informal discussions.
-
-Remember, the goal is to make your repository clear, accessible, and useful for all current and future members of your working group. Happy researching!
+This site is automatically built and deployed using GitHub Actions.

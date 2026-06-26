@@ -1,65 +1,138 @@
-# [Your Name]
+# Home
 
-Welcome to the [Your Name] repository, part of the Environmental Data Science Innovation and Inclusion Lab (ESIIL). This repository serves as the central hub for our research at ESIIL, hosting your project description, proposals, bio, codebase, and more.
+This is a template for an ESIIL postdoctoral researcher.
 
-## Your Project
+## Postdoc Project Title
 
-[Provide a brief overview of your project here. Explain what you aim to achieve, the importance of your project, and its expected impact.]
+Postdoc Project Title
 
-## Project Proposal
+This postdoc project runs as a single system: a GitHub repository where environmental data science is organized, analyzed, and versioned, and a public website where results are explained and shared with collaborators, mentors, and community audiences.
 
-[Link to the detailed project proposal document or include the proposal directly in the repository. This should outline the goals, methodologies, anticipated challenges, and projected timelines.]
+As the project progresses, the repository becomes the reproducible record of the research, and the website becomes the public report.
 
-## Collaborators
-- ...
+[Edit this homepage in GitHub](https://github.com/CU-ESIIL/Postdoc_OASIS/edit/main/docs/index.md){ .md-button .md-button--secondary }
+[Open the GitHub repository](https://github.com/CU-ESIIL/Postdoc_OASIS){ .md-button }
 
-## Code Repository
+![Placeholder image for the homepage overview][slot-hero]{ .homepage-hero }
 
-This section of the repository will include all the code developed for the project. You can structure it as follows:
+--8<-- "_generated/slot_notes/hero.md"
 
-- **Analysis Code**: Scripts for data analysis, statistical modeling, etc.
-- **Data Processing**: Scripts for cleaning, merging, and managing datasets.
-- **Visualization**: Code for creating figures, charts, and interactive visualizations.
+## Postdoc Project Abstract
 
-## Meeting Notes and Agendas
+Add an overview of the postdoc project, the research question, the communities or systems involved, and the outputs the researcher expects to produce. This can mirror a project description, fellowship summary, or ESIIL profile.
 
-Meeting notes and agendas will be regularly updated here to keep all group members informed and engaged with the progress and direction of the project.
+## Start Here
 
-## Contributing to This Repository
+1. Replace the title and summary with the project question, scientific or community need, and main outputs the postdoc expects to produce.
+2. Add or link datasets, working documents, references, and mentor/collaborator resources.
+3. Run or adapt at least one analysis workflow and record decisions in the repository.
+4. Commit figures, tables, notes, and summaries so the work is versioned and reproducible.
+5. Use the website to share progress, methods, and results with collaborators and community audiences.
 
-We welcome contributions from all group members. To maintain the quality and integrity of the repository, please adhere to the following guidelines:
+[Plan the work](work-plan.md){ .md-button }
+[Document data and resources](how-this-postdoc-project-works.md#data){ .md-button .md-button--secondary }
+[Set community expectations](community-care.md){ .md-button .md-button--secondary }
 
-- Make sure all commits have a clear and concise message.
-- Document any major changes or decisions in the meeting notes.
-- Review and merge changes through pull requests to ensure oversight.
+## Postdoc Project Landmarks
 
-## Getting Help
+Use these lightweight labels to connect work sessions, meeting notes, and homepage edits:
 
-If you encounter any issues or have questions about how to contribute, please refer to the [ESIIL Support Page](https://esiil.org/support) or contact the repository maintainers directly.
+PD-A People and roles; PD-B Question and scope; PD-C Data and access; PD-D Methods and workflows; PD-E Results and synthesis; PD-F Outputs and handoff.
 
-## Customize Your Repository
+[Use the landmark guide](instructions/postdoc-landmarks.md){ .md-button .md-button--secondary }
 
-As a new working group, you'll want to make this repository your own. Here's how to get started:
+## How This Repo Is Organized
 
-1. **Edit This Readme**: Replace the placeholder content with information about your specific project. Ensure that the introduction, project overview, and objectives clearly reflect your group's research focus.
+The repository has two connected layers. Top-level files configure the project and its automation. The `docs/` folder contains the website content. `mkdocs.yml` tells MkDocs how to turn that content into the public site. Analysis folders hold the working scientific materials that generate the results shown on the website.
 
-2. **Update Group Member Bios**: Add details about each group member's expertise, role in the project, and professional background. Include links to personal or professional web pages to foster community engagement and collaboration.
+| Part of the repo | What it does | What usually belongs there |
+| --- | --- | --- |
+| Top-level files and folders | Configure the project and keep shared repository guidance in one place | `README.md`, `LICENSE`, workflows, containers, templates, environment setup, and repo-wide metadata |
+| `docs/` | Stores the source content for the public website | Homepage text, summaries, methods, community-facing documentation, and website assets |
+| `mkdocs.yml` | Controls how the site is rendered | Navigation, theme settings, plugins, and GitHub edit links |
+| Working folders | Hold the science-in-progress | Data references, notebooks, scripts, workflows, figures, outputs, and reproducibility materials |
 
-3. **Organize Your Code**: Structure your codebase in a way that is logical and accessible. Use directories and clear naming conventions to make it easy for all members to find and contribute to different parts of the project.
+## Repository Side: Do The Research
 
-4. **Document Your Data**: Include a data directory with README files explaining the datasets, sources, and any preprocessing steps. This will help new members understand and work with the project's data effectively.
+![Placeholder image for the repository side of the workflow][slot-repository-side]{ .slot-button-image }
 
-5. **Outline Your Methods**: Create a detailed METHODS.md file where you describe the methodologies, software, and tools you will be using in your research. This transparency will support reproducibility and collaborative development.
+--8<-- "_generated/slot_notes/repository-side.md"
 
-6. **Set Up Project Management**: Utilize the 'Issues' and 'Projects' features on GitHub to track tasks, discuss ideas, and manage your workflow. This can help in maintaining a clear view of progress and priorities.
+Related landmarks: PD-C Data and access; PD-D Methods and workflows.
 
-7. **Add a License**: Choose and include an appropriate open-source license for your project, ensuring that the broader community understands how they can use and contribute to your work.
+The repository is the working record of the project: it tracks what changed, why it changed, and how results were produced.
 
-8. **Create Contribution Guidelines**: Establish a CONTRIBUTING.md file with instructions for members on how to propose changes, submit issues, and contribute code.
+- Data sources and metadata
+- Notebooks and scripts
+- Workflows and reproducible analysis
+- Meeting notes and decisions
+- Figures, tables, manuscripts, and other outputs
 
-9. **Review and Merge Workflow**: Decide on a workflow for reviewing and merging changes. Will you use branch protection? Who will have merge privileges? Document this process to avoid confusion.
+## Website Side: Share The Research
 
-10. **Establish Communication Channels**: Beyond GitHub, set up additional communication channels like Slack, Discord, or email lists for quick and informal discussions.
+![Placeholder image for the website side of the workflow][slot-website-side]{ .slot-button-image }
 
-Remember, the goal is to make your repository clear, accessible, and useful for all current and future members of your working group. Happy researching!
+--8<-- "_generated/slot_notes/website-side.md"
 
+Related landmarks: PD-E Results and synthesis; PD-F Outputs and handoff.
+
+The website turns the research record into a readable public report.
+
+- Plain-language summaries
+- Methods documentation
+- Figures, maps, and visualizations
+- Project updates and synthesis products
+- Manuscripts, reports, dashboards, or educational materials
+
+## How The Two Sides Connect
+
+The repository and website are not separate products. When the postdoc updates data, analysis code, figures, or written summaries in GitHub, those changes can be rendered through the website. Commits are the bridge between doing the research and sharing the research.
+
+## When This Postdoc Project Is Live
+
+A postdoc project is live when:
+
+- The research question is stated
+- Data sources are linked or documented
+- At least one analysis or workflow is runnable
+- Outputs are committed to the repository
+- The website explains what the project is doing and why it matters
+
+For guidance on turning this scaffold into a public scientific record, see the [Public-Facing Site Guide](public-facing-site-guide.md).
+
+## Early Process Gallery
+
+Use this section to show how the project gets started without manually editing image links one by one.
+
+--8<-- "_generated/galleries/root/start-here/index.md"
+
+## Key Links To Replace
+
+Use this section for the links the postdoc will actually maintain. Replace each placeholder with the working document, repository resource, dataset hub, or output page that collaborators should use.
+
+- Main Working Document: [link]
+- GitHub Repository: [link]
+- Data / Resources: [link]
+- Outputs / Dashboard: [link]
+
+## Current Phase
+
+Working Phase: Project setup  
+(Replace this line with the phase the project is actually in, such as onboarding, data access, active analysis, writing, or handoff.)
+
+## People
+
+Replace this table with names, roles, institutions, and responsibilities so new collaborators know who is doing what.
+
+Related landmark: PD-A People and roles.
+
+![Placeholder image representing collaboration and project identity][slot-group-photo]{ .section-image }
+
+--8<-- "_generated/slot_notes/group-photo.md"
+
+| Name | Role | Institution | Responsibilities |
+| --- | --- | --- | --- |
+| Name | Postdoctoral researcher | Institution | Responsibilities |
+| Name | Mentor or collaborator | Institution | Responsibilities |
+
+--8<-- "_generated/image_slots.md"
